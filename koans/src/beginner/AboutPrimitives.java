@@ -131,65 +131,65 @@ public class AboutPrimitives {
 
     @Koan
     public void decimalNumbersAreOfTypeDouble() {
-        assertEquals(getType(1.0), __);
+        assertEquals(getType(1.0), double.class);
     }
 
     @Koan
     public void primitivesOfTypeDoubleCanBeDeclaredWithoutTheDecimalPoint() {
-        assertEquals(getType(1d), __);
+        assertEquals(getType(1d), double.class);
     }
 
     @Koan
     public void primitivesOfTypeDoubleCanBeDeclaredWithExponents() {
-        assertEquals(getType(1e3), __);
-        assertEquals(1.0e3, __);
-        assertEquals(1E3, __);
+        assertEquals(getType(1e3), double.class);
+        assertEquals(1.0e3, 1000.0);
+        assertEquals(1E3, 1000.0);
     }
 
     @Koan
     public void primitivesOfTypeDoubleHaveAnObjectTypeDouble() {
         Object number = 1.0;
-        assertEquals(getType(number), __);
+        assertEquals(getType(number), Double.class);
     }
 
     @Koan
     public void doublesHaveALargeRange() {
-        assertEquals(Double.MIN_VALUE, __);
-        assertEquals(Double.MAX_VALUE, __);
+        assertEquals(Double.MIN_VALUE, 4.9E-324);
+        assertEquals(Double.MAX_VALUE, 1.7976931348623157E308);
     }
 
     @Koan
     public void doubleSize() {
-        assertEquals(Double.SIZE, __);
+        assertEquals(Double.SIZE, 64);
     }
 
     @Koan
     public void decimalNumbersCanAlsoBeOfTypeFloat() {
-        assertEquals(getType(1f), __);
+        assertEquals(getType(1f), float.class);
     }
 
     @Koan
     public void primitivesOfTypeFloatCanBeDeclaredWithExponents() {
-        assertEquals(getType(1e3f), __);
-        assertEquals(1.0e3f, __);
-        assertEquals(1E3f, __);
+        assertEquals(getType(1e3f), float.class);
+        assertEquals(1.0e3f, 1000.0f);
+        assertEquals(1E3f, 1000.0f);
     }
 
     @Koan
     public void primitivesOfTypeFloatHaveAnObjectTypeFloat() {
         Object number = 1f;
-        assertEquals(getType(number), __);
+        assertEquals(getType(number), Float.class);
     }
 
     @Koan
     public void floatsHaveASmallerRangeThanDoubles() {
-        assertEquals(Float.MIN_VALUE, __);
-        assertEquals(Float.MAX_VALUE, __);
+        assertEquals(Float.MIN_VALUE, 1.4E-45f);
+        assertEquals(Float.MAX_VALUE, 3.4028235E38f);
     }
 
     @Koan
     public void floatSize() {
-        assertEquals(Float.SIZE, __);
+        assertEquals(Float.SIZE, 32);
     }
 
     private Class<?> getType(int value) {
@@ -225,3 +225,13 @@ public class AboutPrimitives {
     }
 
 }
+
+// Character: 16
+//
+// Byte: 8
+// Short: 16
+// Integer: 32
+// Long: 64
+//
+// Float: 64
+// Double: 64
